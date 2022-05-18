@@ -1,25 +1,31 @@
 import * as React from 'react';
 
-import { StyleSheet, View } from 'react-native';
+import {ScrollView, StyleSheet, View} from 'react-native';
 import { LeanSdkView } from 'react-native-lean-sdk';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <LeanSdkView color="#32a852" style={styles.box} />
-    </View>
+    <ScrollView style={styles.container}>
+      <View style={styles.box} />
+      <View style={styles.box} />
+      <View style={styles.box} />
+      <LeanSdkView
+        userToken=""
+        style={styles.box}
+        options={{ environment: 'STAGING' }}
+      />
+      <View style={styles.box} />
+      <View style={styles.box} />
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
   },
   box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
+    height: 240,
+    backgroundColor: 'red',
   },
 });

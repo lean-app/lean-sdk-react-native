@@ -37,7 +37,7 @@
     "android"
   ],
   "repository": "https://github.com/lean-app/lean-sdk-react-native",
-  "author": "lean <federicoruiz@sirius.com.ar> (https://withlean.com)",
+  "author": "federuiz <federicoruiz@sirius.com.ar> (https://withlean.com)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/lean-app/lean-sdk-react-native/issues"
