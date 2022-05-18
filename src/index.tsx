@@ -12,7 +12,8 @@ const LINKING_ERROR =
   '- You are not using Expo managed workflow\n';
 
 type LeanSdkProps = {
-  color: string;
+  userToken: string;
+  options?: { environment: string };
   style: ViewStyle;
 };
 

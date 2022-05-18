@@ -7,10 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-
-		5E555C0D2413F4C50049A1A2 /* LeanSdk.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* LeanSdk.m */; };
-		F4FF95D7245B92E800C19C63 /*  LeanSdk.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF95D6245B92E800C19C63 /*  LeanSdk.swift */; };
-
+		BC3AB98EF7CCFBE9CAE1BFCE /* Pods_RNLeanSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D6E458D21D1C5026C44D988 /* Pods_RNLeanSdk.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,12 +23,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		134814201AA4EA6300B7C361 /* libLeanSdk.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLeanSdk.a; sourceTree = BUILT_PRODUCTS_DIR; };
-
-		B3E7B5891CC2AC0600A0062D /* LeanSdk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeanSdk.m; sourceTree = "<group>"; };
-		F4FF95D5245B92E700C19C63 /* LeanSdk-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LeanSdk-Bridging-Header.h"; sourceTree = "<group>"; };
-		F4FF95D6245B92E800C19C63 /* LeanSdk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeanSdk.swift; sourceTree = "<group>"; };
-
+		134814201AA4EA6300B7C361 /* libRNLeanSdk.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNLeanSdk.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D6E458D21D1C5026C44D988 /* Pods_RNLeanSdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RNLeanSdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B9C75836469B4A927F2769D /* Pods-RNLeanSdk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNLeanSdk.release.xcconfig"; path = "../../example/ios/Pods/Target Support Files/Pods-RNLeanSdk/Pods-RNLeanSdk.release.xcconfig"; sourceTree = "<group>"; };
+		4C78FA2F9916510BFD0636F4 /* Pods-RNLeanSdk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNLeanSdk.debug.xcconfig"; path = "../../example/ios/Pods/Target Support Files/Pods-RNLeanSdk/Pods-RNLeanSdk.debug.xcconfig"; sourceTree = "<group>"; };
+		78E91D17283598B10021248D /* LeanSdkViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeanSdkViewManager.swift; sourceTree = "<group>"; };
+		78E91D18283598B10021248D /* LeanSdkViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeanSdkViewManager.m; sourceTree = "<group>"; };
+		78E91D1A28359A1D0021248D /* LeanSdk-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LeanSdk-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC3AB98EF7CCFBE9CAE1BFCE /* Pods_RNLeanSdk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,30 +47,48 @@
 		134814211AA4EA7D00B7C361 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				134814201AA4EA6300B7C361 /* libLeanSdk.a */,
+				134814201AA4EA6300B7C361 /* libRNLeanSdk.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		268CD90A512FFAB7778600E2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4C78FA2F9916510BFD0636F4 /* Pods-RNLeanSdk.debug.xcconfig */,
+				4B9C75836469B4A927F2769D /* Pods-RNLeanSdk.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
-
-				F4FF95D6245B92E800C19C63 /* LeanSdk.swift */,
-				B3E7B5891CC2AC0600A0062D /* LeanSdk.m */,
-				F4FF95D5245B92E700C19C63 /* LeanSdk-Bridging-Header.h */,
-
+				78E91D1A28359A1D0021248D /* LeanSdk-Bridging-Header.h */,
+				78E91D18283598B10021248D /* LeanSdkViewManager.m */,
+				78E91D17283598B10021248D /* LeanSdkViewManager.swift */,
 				134814211AA4EA7D00B7C361 /* Products */,
+				268CD90A512FFAB7778600E2 /* Pods */,
+				80632A8534F28A9A2799DC7E /* Frameworks */,
 			);
+			sourceTree = "<group>";
+		};
+		80632A8534F28A9A2799DC7E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2D6E458D21D1C5026C44D988 /* Pods_RNLeanSdk.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		58B511DA1A9E6C8500147676 /* LeanSdk */ = {
+		58B511DA1A9E6C8500147676 /* RNLeanSdk */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "LeanSdk" */;
+			buildConfigurationList = 58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "RNLeanSdk" */;
 			buildPhases = (
+				655173BA1D8DF302B09FC838 /* [CP] Check Pods Manifest.lock */,
 				58B511D71A9E6C8500147676 /* Sources */,
 				58B511D81A9E6C8500147676 /* Frameworks */,
 				58B511D91A9E6C8500147676 /* CopyFiles */,
@@ -80,9 +97,9 @@
 			);
 			dependencies = (
 			);
-			name = LeanSdk;
+			name = RNLeanSdk;
 			productName = RCTDataManager;
-			productReference = 134814201AA4EA6300B7C361 /* libLeanSdk.a */;
+			productReference = 134814201AA4EA6300B7C361 /* libRNLeanSdk.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -99,7 +116,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 58B511D61A9E6C8500147676 /* Build configuration list for PBXProject "LeanSdk" */;
+			buildConfigurationList = 58B511D61A9E6C8500147676 /* Build configuration list for PBXProject "RNLeanSdk" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -112,20 +129,41 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				58B511DA1A9E6C8500147676 /* LeanSdk */,
+				58B511DA1A9E6C8500147676 /* RNLeanSdk */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		655173BA1D8DF302B09FC838 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RNLeanSdk-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		58B511D71A9E6C8500147676 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-
-				F4FF95D7245B92E800C19C63 /* LeanSdk.swift in Sources */,
-				B3E7B58A1CC2AC0600A0062D /* LeanSdk.m in Sources */,
-
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +265,7 @@
 		};
 		58B511F01A9E6C8500147676 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C78FA2F9916510BFD0636F4 /* Pods-RNLeanSdk.debug.xcconfig */;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -236,18 +275,17 @@
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = LeanSdk;
+				PRODUCT_NAME = RNLeanSdk;
 				SKIP_INSTALL = YES;
-
 				SWIFT_OBJC_BRIDGING_HEADER = "LeanSdk-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-
 			};
 			name = Debug;
 		};
 		58B511F11A9E6C8500147676 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B9C75836469B4A927F2769D /* Pods-RNLeanSdk.release.xcconfig */;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -257,19 +295,17 @@
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = LeanSdk;
+				PRODUCT_NAME = RNLeanSdk;
 				SKIP_INSTALL = YES;
-
 				SWIFT_OBJC_BRIDGING_HEADER = "LeanSdk-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		58B511D61A9E6C8500147676 /* Build configuration list for PBXProject "LeanSdk" */ = {
+		58B511D61A9E6C8500147676 /* Build configuration list for PBXProject "RNLeanSdk" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				58B511ED1A9E6C8500147676 /* Debug */,
@@ -278,7 +314,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "LeanSdk" */ = {
+		58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "RNLeanSdk" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				58B511F01A9E6C8500147676 /* Debug */,
