@@ -10,7 +10,7 @@ class LeanSdkView : UIView {
 
   @objc var color: String = "" {
     didSet {
-      self.backgroundColor = hexStringToUIColor(hexColor: color)
+      self.backgroundColor = .red
     }
   }
 

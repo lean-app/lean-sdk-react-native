@@ -6,7 +6,7 @@ import { LeanSdkView } from 'react-native-lean-sdk';
 export default function App() {
   return (
     <View style={styles.container}>
-      <LeanSdkViewManager color="#32a852" style={styles.box} />
+      <LeanSdkView color="#32a852" style={styles.box} />
     </View>
   );
 }
