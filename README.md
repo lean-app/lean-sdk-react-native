@@ -15,7 +15,7 @@ import { LeanSdkView } from "react-native-lean-sdk";
 
 // ...
 
-<LeanSdkView color="tomato" />
+<LeanSdkView userToken="<user_token>" options={{environment: "SANDBOX"}} style={{height: 200}} />
 ```
 
 ## Contributing
