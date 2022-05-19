@@ -10,12 +10,12 @@ class LeanSdkViewManager: RCTViewManager {
 
 class LeanSdkView : UIView {
 
-  @objc var token: String?
+  @objc var userToken: String?
   @objc var options: [String: String]? = nil
   var lean: Lean? = nil
 
   override func layoutSubviews() {
       super.layoutSubviews()
-      lean = Lean(parentView: self, userToken: self.token!, options: self.options)
+      lean = Lean(parentView: self, userToken: self.userToken!, options: self.options)
   }
 }
