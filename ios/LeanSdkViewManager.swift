@@ -17,13 +17,16 @@ class LeanSdkView : UIView {
           sdkTheme = Theme(color: (theme?["color"] as? Dictionary<String, String>), fontFamily: (theme?["fontFamily"] as? String), fontWeight: (theme?["fontWeight"] as? Dictionary<String, String>))
       }
   }
-
+   @objc var onEvent:RCTDirectEventBlock?
 
   var lean: Lean? = nil
   var sdkTheme: Theme? = nil
 
   override func layoutSubviews() {
       super.layoutSubviews()
-      lean = Lean(parentView: self, userToken: self.userToken!, theme: self.sdkTheme, options: self.options)
+      func onEvent(data: [String : Any]?){
+          self.onEvent?(data)
+      }
+      lean = Lean(parentView: self, userToken: self.userToken!, theme: self.sdkTheme, onEvent: onEvent, options: self.options)
   }
 }

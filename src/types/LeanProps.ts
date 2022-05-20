@@ -1,4 +1,4 @@
-import type { ViewStyle } from 'react-native';
+import type {ViewStyle} from 'react-native';
 import type { Theme } from './Theme';
 
 export type LeanSdkProps = {
@@ -6,4 +6,5 @@ export type LeanSdkProps = {
   options?: { environment: string };
   style: ViewStyle;
   theme?: Theme;
+  onEvent?: (data: any) => void;
 };
