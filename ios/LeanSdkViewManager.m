@@ -4,5 +4,6 @@
 
 RCT_EXPORT_VIEW_PROPERTY(userToken, NSString)
 RCT_EXPORT_VIEW_PROPERTY(options, NSDictionary *)
+RCT_EXPORT_VIEW_PROPERTY(theme, NSDictionary *)
 
 @end

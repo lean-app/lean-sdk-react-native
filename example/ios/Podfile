@@ -9,7 +9,7 @@ target 'LeanSdkExample' do
   use_frameworks!
   use_react_native!(:path => config["reactNativePath"])
 
-  pod "LeanSdk", :git => 'https://github.com/lean-app/lean-sdk-ios', :branch => '0.0.1'
+  pod "LeanSdk", :git => 'https://github.com/lean-app/lean-sdk-ios', :branch => '0.1.4'
   pod 'react-native-lean-sdk', :path => '../..'
   # Enables Flipper.
   #
