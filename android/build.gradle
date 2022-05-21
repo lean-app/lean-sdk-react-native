@@ -4,6 +4,7 @@ buildscript {
             google()
             mavenCentral()
             jcenter()
+
         }
 
         dependencies {
@@ -19,10 +20,10 @@ def safeExtGet(prop, fallback) {
 }
 
 android {
-    compileSdkVersion safeExtGet('LeanSdk_compileSdkVersion', 29)
+    compileSdkVersion safeExtGet('LeanSdk_compileSdkVersion', 31)
     defaultConfig {
         minSdkVersion safeExtGet('LeanSdk_minSdkVersion', 16)
-        targetSdkVersion safeExtGet('LeanSdk_targetSdkVersion', 29)
+        targetSdkVersion safeExtGet('LeanSdk_targetSdkVersion', 31)
         versionCode 1
         versionName "1.0"
 
@@ -51,9 +52,11 @@ repositories {
     google()
     mavenCentral()
     jcenter()
+    maven { url 'https://jitpack.io' }
 }
 
 dependencies {
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
+    implementation 'com.github.lean-app:lean-sdk-android:0.1.9'
 }
