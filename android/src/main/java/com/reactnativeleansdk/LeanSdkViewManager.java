@@ -1,19 +1,29 @@
 package com.reactnativeleansdk;
 
-import android.graphics.Color;
 import android.view.View;
 
 import androidx.annotation.NonNull;
+import kotlin.Function;
 
+import com.facebook.react.bridge.Arguments;
+import com.facebook.react.bridge.ReactApplicationContext;
+import com.facebook.react.bridge.ReactContext;
+import com.facebook.react.bridge.WritableMap;
+import com.facebook.react.common.MapBuilder;
 import com.facebook.react.uimanager.SimpleViewManager;
+import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.annotations.ReactProp;
+import com.facebook.react.uimanager.events.RCTEventEmitter;
+
 import java.util.HashMap;
-import com.lean.leansdk.Lean;
+import java.util.Map;
+import com.lean.leansdk.LeanView;
+import com.lean.leansdk.EventFuncInterface;
 
 public class LeanSdkViewManager extends SimpleViewManager<View> {
     public static final String REACT_CLASS = "LeanSdkView";
-    private HashMap theme;
+    private LeanView leanView;
 
     @Override
     @NonNull
@@ -24,21 +34,45 @@ public class LeanSdkViewManager extends SimpleViewManager<View> {
     @Override
     @NonNull
     public View createViewInstance(ThemedReactContext reactContext) {
-
-      Lean lean =  new Lean(reactContext, token, options, );
-      HashMap<String, String> options = new HashMap<>();
-      options.put("environment", "STAGING");
-      String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImN1c3RvbWVyX3RialpvcjBOakwweVdINjI1X2NLViIsImVtYWlsIjoidGltK2N1c3RvbWVyNzMwQHdpdGhsZWFuLmNvbSIsImludGVyZmFjZUlkIjoiaW50ZXJmYWNlX09MVGFmTlY0QVM4NHNQNm1uQzFQMSIsInN0YXR1cyI6IkNPTkZJUk1FRCIsImlhdCI6MTY1MjgzNTcxNCwiZXhwIjoxNjUzNDQwNTE0fQ.EmMWNgI8IkvQIIa1VxGJeCUnLlx9HfukF6Kt8huQty4";
-      return lean.viewCardInfo();
+      EventFuncInterface fn =
+        parameter -> {
+          WritableMap event = Arguments.createMap();
+          WritableMap action = Arguments.createMap();
+          action.putString("action", parameter);
+          event.putMap("data", action);
+          reactContext
+            .getJSModule(RCTEventEmitter.class)
+            .receiveEvent(leanView.getId(), "topChange", event);
+        };
+      leanView = new LeanView(reactContext, null, null, null, fn);
+      return leanView;
     }
 
-    @ReactProp(name = "color")
-    public void setColor(View view, String color) {
-        view.setBackgroundColor(Color.parseColor(color));
+    @ReactProp(name = "userToken")
+    public void setUserToken(View view, String userToken) {
+      leanView.setToken(userToken);
+      leanView.refresh();
+    }
+
+    @ReactProp(name = "options")
+    public void setOptions(View view, ReadableMap options) {
+      leanView.setOptions(options.toHashMap());
+      leanView.refresh();
     }
 
     @ReactProp(name = "theme")
     public void setTheme(View view, ReadableMap theme) {
-        this.theme = theme.toHashMap();
+      leanView.setTheme(theme.toHashMap());
+      leanView.refreshStyles();
+    }
+
+    public Map getExportedCustomBubblingEventTypeConstants() {
+      return MapBuilder.builder().put(
+        "topChange",
+        MapBuilder.of(
+          "phasedRegistrationNames",
+          MapBuilder.of("bubbled", "onLeanEvent")
+        )
+      ).build();
     }
 }

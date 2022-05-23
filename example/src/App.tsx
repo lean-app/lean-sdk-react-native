@@ -15,9 +15,13 @@ export default function App() {
         onEvent={(data: any) => {
           console.log('New event received', data);
         }}
-        // theme={{
-        //   color: { primary: 'red', textPrimary: 'red', textSecondary: 'green' },
-        // }}
+        theme={{
+          color: {
+            primary: 'blue',
+            textPrimary: 'blue',
+            textSecondary: 'green',
+          },
+        }}
       />
       <View style={styles.box} />
       <View style={styles.box} />

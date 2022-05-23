@@ -1,4 +1,4 @@
-import type {ViewStyle} from 'react-native';
+import type { ViewStyle } from 'react-native';
 import type { Theme } from './Theme';
 
 export type LeanSdkProps = {

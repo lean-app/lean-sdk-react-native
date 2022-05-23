@@ -1,4 +1,9 @@
-import { requireNativeComponent, UIManager, Platform } from 'react-native';
+import {
+  requireNativeComponent,
+  UIManager,
+  Platform,
+  NativeSyntheticEvent,
+} from 'react-native';
 import type { LeanSdkProps } from './types/LeanProps';
 import React from 'react';
 
@@ -12,16 +17,25 @@ const ComponentName = 'LeanSdkView';
 
 const NativeView =
   UIManager.getViewManagerConfig(ComponentName) != null
-    ? requireNativeComponent<LeanSdkProps>(ComponentName)
+    ? requireNativeComponent<
+        LeanSdkProps & {
+          onChange: (event: NativeSyntheticEvent<{ data: any }>) => void;
+        }
+      >(ComponentName)
     : () => {
         throw new Error(LINKING_ERROR);
       };
 
-export const LeanSdkView = (props: LeanSdkProps) => (
-  <NativeView
-    {...props}
-    onEvent={(event) =>
-      props.onEvent ? props.onEvent(event.nativeEvent.data) : null
-    }
-  />
-);
+export const LeanSdkView = (props: LeanSdkProps) => {
+  return (
+    <NativeView
+      {...props}
+      onChange={(event) => {
+        props.onEvent ? props.onEvent(event.nativeEvent.data) : null;
+      }}
+      onEvent={(event) => {
+        props.onEvent ? props.onEvent(event.nativeEvent.data) : null; // ios only
+      }}
+    />
+  );
+};
